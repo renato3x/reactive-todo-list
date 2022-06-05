@@ -1,0 +1,6 @@
+:root {
+  --main-bg: linear-gradient(to top, #4f4789, #5f5894);
+  --btn-bg: #09618d;
+  --btn-border: #00a5cf;
+  --danger-color: #f6511d;
+}
