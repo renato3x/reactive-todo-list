@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+
 :root {
   --main-bg: linear-gradient(to top, #4f4789, #5f5894);
   --btn-bg: #09618d;
   --btn-border: #00a5cf;
   --danger-color: #f6511d;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Noto Sans', sans-serif;
+  color: #ffffff;
 }
 
 body {
