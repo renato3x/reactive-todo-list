@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
 
 :root {
   --app-bg: #2B2E43;
@@ -10,12 +10,12 @@
 
 html {
   font-size: 16px;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: var(--text-color);
 }
 
 body {
-  margin: 0 15rem;
+  margin: 0 25rem;
   padding: 0;
   box-sizing: border-box;
   height: 100vh;
@@ -26,10 +26,30 @@ body {
   flex-direction: column;
 }
 
+#main-title {
+  font-weight: 500;
+}
+
 .todo {
   flex-grow: 1;
   width: 100%;
   box-sizing: border-box;
   padding: .5rem;
   overflow-y: auto;
+}
+
+.todo .todo-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo .todo-actions .todo-text-input {
+  height: 2.5rem;
+  border: none;
+  padding: .5rem;
+  box-sizing: border-box;
+  border-radius: .5rem;
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+  outline: none;
 }
