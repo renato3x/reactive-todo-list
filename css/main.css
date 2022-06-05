@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --main-bg: linear-gradient(to top, #4f4789, #5f5894);
-  --btn-bg: #09618d;
-  --btn-border: #00a5cf;
-  --danger-color: #f6511d;
+  --app-bg: #2B2E43;
+  --card-bg: #484C69;
+  --text-color: #ffffff;
+  --danger: #f04242;
+  --success: #67bf67;
 }
 
 html {
   font-size: 16px;
   font-family: 'Noto Sans', sans-serif;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 body {
@@ -19,7 +20,7 @@ body {
   box-sizing: border-box;
   height: 100vh;
   max-height: 100vh;
-  background: var(--main-bg);
+  background: var(--app-bg);
   display: flex;
   align-items: center;
   flex-direction: column;
