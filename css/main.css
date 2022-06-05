@@ -4,3 +4,11 @@
   --btn-border: #00a5cf;
   --danger-color: #f6511d;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background: var(--main-bg);
+}
