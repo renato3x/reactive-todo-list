@@ -64,7 +64,7 @@ body {
   border-radius: .5rem;
   outline: none;
   cursor: pointer;
-  background: var(--success);
+  background: var(--danger);
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -100,22 +100,12 @@ body {
   background: transparent;
   border: none;
   padding: 0;
-
-  width: fit-content;
-
-  font-size: 1.5rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0;
-
-  transition: opacity .2s;
-
-  cursor: pointer;
-
   margin-left: 1rem;
+  width: fit-content;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity .1s;
+  cursor: pointer;
 }
 
 .todo .todo-items .todo-item:hover .remove-todo {
