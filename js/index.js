@@ -10,6 +10,33 @@ onAddTodoBtnClick$.subscribe(
 
     if (todoTextInputContent.length > 0) {
       todos.push(todoTextInputContent)
+      todosEmitter$.next(todos)
     }
   }
 )
+
+todosEmitter$.subscribe(renderTodos)
+
+function renderTodos(todos) {
+  const todoItems = document.querySelector('.todo-items')
+  todoItems.innerHTML = ''
+
+  const items = todos.map((todo, index) => {
+    const todoItem = document.createElement('div')
+    todoItem.classList.add('todo-item')
+
+    const p = document.createElement('p')
+    p.innerText = todo
+
+    const removeTodo = document.createElement('div')
+    removeTodo.classList.add('remove-todo')
+    removeTodo.dataset.todoId = index
+    removeTodo.innerHTML = '&times;'
+
+    todoItem.append(p, removeTodo)
+
+    return todoItem
+  })
+
+  todoItems.append(...items)
+}
