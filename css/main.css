@@ -19,7 +19,7 @@ html {
 
 body {
   margin: 0;
-  padding: 0 25rem;
+  padding: 0 10px;
   box-sizing: border-box;
   min-height: 100vh;
   background: var(--app-bg);
@@ -103,11 +103,27 @@ body {
   margin-left: 1rem;
   width: fit-content;
   font-size: 1.5rem;
-  opacity: 0;
+  opacity: 1;
   transition: opacity .1s;
   cursor: pointer;
 }
 
 .todo .todo-items .todo-item:hover .remove-todo {
   opacity: 1;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 0 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 0 300px;
+  }
+
+  .todo .todo-items .todo-item .remove-todo {
+    opacity: 0;
+  }
 }
