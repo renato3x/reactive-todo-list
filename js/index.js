@@ -4,18 +4,19 @@ const todos = []
 const onAddTodoBtnClick$ = fromEvent(document.querySelector('.add-todo'), 'click')
 const todosEmitter$ = new BehaviorSubject(todos)
 
-onAddTodoBtnClick$.subscribe(
-  event => {
+onAddTodoBtnClick$.subscribe(setTodoInList(todos))
+todosEmitter$.subscribe(renderTodos)
+
+function setTodoInList(list) {
+  return function(event) {
     const todoTextInputContent = document.querySelector('.todo-text-input').value
 
     if (todoTextInputContent.length > 0) {
-      todos.push(todoTextInputContent)
-      todosEmitter$.next(todos)
+      list.push(todoTextInputContent)
+      todosEmitter$.next(list)
     }
   }
-)
-
-todosEmitter$.subscribe(renderTodos)
+}
 
 function renderTodos(todos) {
   const todoItems = document.querySelector('.todo-items')
