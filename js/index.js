@@ -6,9 +6,10 @@ const todosEmitter$ = new BehaviorSubject(todos)
 
 onAddTodoBtnClick$.subscribe(setTodoInList(todos))
 todosEmitter$.subscribe(renderTodos)
+todosEmitter$.subscribe(console.info)
 
 function setTodoInList(list) {
-  return function(event) {
+  return function() {
     const todoTextInputContent = document.querySelector('.todo-text-input').value
 
     if (todoTextInputContent.length > 0) {
@@ -29,10 +30,13 @@ function renderTodos(todos) {
     const p = document.createElement('p')
     p.innerText = todo
 
-    const removeTodo = document.createElement('div')
+    const removeTodo = document.createElement('button')
     removeTodo.classList.add('remove-todo')
     removeTodo.dataset.todoId = index
     removeTodo.innerHTML = '&times;'
+
+    const todoExcluder = deleteTodoFromList(todos)
+    fromEvent(removeTodo, 'click').subscribe(todoExcluder(index))
 
     todoItem.append(p, removeTodo)
 
@@ -40,4 +44,13 @@ function renderTodos(todos) {
   })
 
   todoItems.append(...items)
+}
+
+function deleteTodoFromList(list) {
+  return todoIndex => {
+    return () => {
+      list.splice(todoIndex, 1)
+      todosEmitter$.next(list)
+    }
+  }
 }
